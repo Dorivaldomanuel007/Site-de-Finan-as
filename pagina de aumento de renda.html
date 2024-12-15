@@ -1,0 +1,410 @@
+<html><head><base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="website icon" type="png" href="img/marketing-digital-para-investir.jpg">
+<title>Como Aumentar Sua Renda | FinanceWise Hub</title>
+<style>
+:root {
+  --primary: #2C5282;
+  --secondary: #4299E1;
+  --accent: #F6AD55;
+  --text: #2D3748;
+  --bg: #F7FAFC;
+  --success: #48BB78;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+ /* Estilos para o menu hambúrguer */
+ .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      transition: transform 0.3s;
+    }
+
+    .hamburger.active div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Menu hambúrguer visível em dispositivos móveis */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Oculta o menu padrão */
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: var(--primary);
+        padding: 1rem 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+
+      .hamburger {
+        display: flex; /* Exibe o botão hambúrguer */
+      }
+
+      /* Exibe o menu quando o hambúrguer for clicado */
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+.hero {
+  background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(66, 153, 225, 0.9)),
+              url('https://images.unsplash.com/photo-1518183214770-9cae3a3dd20e?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 1rem;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.cta-button {
+  background: var(--accent);
+  color: var(--text);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.income-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.income-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+  border-left: 4px solid var(--success);
+}
+
+.income-card:hover {
+  transform: translateY(-3px);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.resource-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.resource-card svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  fill: var(--primary);
+}
+
+.sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.ad-space {
+  background: #EDF2F7;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.tools-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        FinanceWise Hub
+      </div>
+      <!-- Menu Hamburguer -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links">
+        <a href="home-financeWise Hub.html">Dicas de Economia</a>
+        <a href="pagina de investimento.html">Investimentos</a>
+        <a href="pagina de aumento de renda.html">Aumento de Renda</a>
+        <a href="pagina de créditos e dívidas.html">Crédito e Dívidas</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Como Aumentar Sua Renda em 2024</h1>
+    <p>Descubra ideias e estratégias testadas para ganhar mais dinheiro e conquistar sua liberdade financeira.</p>
+   
+  </section>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <main>
+      <section class="income-section">
+        <h2>Oportunidades de Renda Extra</h2>
+        <p>Aumentar sua renda não é apenas sobre ganhar mais dinheiro, mas também sobre criar estabilidade e abrir portas para novas oportunidades. Vamos explorar como você pode começar hoje.</p>
+      </section>
+
+      <section class="income-section">
+        <h3>Trabalhos Freelancer</h3>
+        <div class="income-card">
+          <h4>Design Gráfico</h4>
+          <p>Crie logos, banners e materiais visuais para clientes globais.</p>
+        </div>
+        <div class="income-card">
+          <h4>Redação e Tradução</h4>
+          <p>Produza conteúdo para blogs, sites e materiais publicitários.</p>
+        </div>
+      </section>
+
+      <section class="income-section">
+        <h3>Vendas Online</h3>
+        <div class="income-card">
+          <h4>E-commerce</h4>
+          <p>Monte sua loja virtual e venda produtos para todo o Brasil.</p>
+        </div>
+        <div class="income-card">
+          <h4>Marketing Digital</h4>
+          <p>Trabalhe como afiliado e ganhe comissões por vendas.</p>
+        </div>
+      </section>
+
+      <section class="income-section">
+        <h3>Casos de Sucesso</h3>
+        <div class="income-card">
+          <h4>História da Joana</h4>
+          <p>Como aumentou sua renda em R$ 2.000 por mês vendendo produtos artesanais.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-space">
+        <!-- AdSense -->
+        <div id="sidebar-ad"></div>
+      </div>
+
+      <div class="tools-section">
+        <h3>Ferramentas Úteis</h3>
+        <div class="resource-grid">
+          <div class="resource-card">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+              <path d="M7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"/>
+            </svg>
+            <h4>Calculadora de Metas</h4>
+            <a href="Calculadora de metas.html">Acessar</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Aviso Legal</h4>
+        <p>As informações fornecidas são apenas para fins educacionais.</p>
+      </div>
+      <div>
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="https://financewisehub.com/blog">Blog</a></li>
+          <li><a href="https://financewisehub.com/contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes Sociais</h4>
+        <p>Siga-nos para mais dicas!</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+
+function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('active');
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    // AdSense
+    window.onload = function() {
+      console.log('AdSense loaded');
+    };
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body></html>

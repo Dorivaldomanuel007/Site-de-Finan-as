@@ -1,0 +1,323 @@
+<html>
+<head>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="website icon" type="png" href="img/marketing-digital-para-investir.jpg">
+  <title>FinanceWise Hub - Seu Guia para Liberdade Financeira</title>
+  <style>
+    :root {
+      --primary: #2C5282;
+      --secondary: #4299E1;
+      --accent: #F6AD55;
+      --text: #2D3748;
+      --bg: #F7FAFC;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Estilos para o menu hambúrguer */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: white;
+      transition: transform 0.3s;
+    }
+
+    /* Transformação das barras para X */
+    .hamburger.open div:nth-child(1) {
+      transform: rotate(45deg);
+      position: relative;
+      top: 7px;
+    }
+
+    .hamburger.open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open div:nth-child(3) {
+      transform: rotate(-45deg);
+      position: relative;
+      top: -7px;
+    }
+
+    /* Menu hambúrguer visível em dispositivos móveis */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* Oculta o menu padrão */
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        background: var(--primary);
+        padding: 1rem 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+      }
+
+      .hamburger {
+        display: flex; /* Exibe o botão hambúrguer */
+      }
+
+      /* Exibe o menu quando o hambúrguer for clicado */
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(66, 153, 225, 0.9)),
+                  url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 4rem 1rem;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-button {
+      background: var(--accent);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .features {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .ad-space {
+      background: #EDF2F7;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .newsletter {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: 2rem auto 0;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    .newsletter-form button {
+      background: var(--accent);
+      color: var(--text);
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav-container">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        FinanceWise Hub
+      </div>
+      <!-- Menu Hamburguer -->
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links">
+        <a href="home-financeWise Hub.html">Dicas de Economia</a>
+        <a href="pagina de investimento.html">Investimentos</a>
+        <a href="pagina de aumento de renda.html">Aumento de Renda</a>
+        <a href="pagina de créditos e dívidas.html">Crédito e Dívidas</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Conquiste sua Liberdade Financeira</h1>
+    <p>Aprenda a gerenciar seu dinheiro, investir com inteligência e construir um futuro financeiro próspero.</p>
+  </section>
+
+  <div class="ad-space">
+    <div id="top-ad"></div>
+  </div>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Dicas de Economia</h3>
+      <p>Descubra estratégias práticas para economizar dinheiro no dia a dia e fazer seu orçamento render mais.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Investimentos</h3>
+      <p>Aprenda os fundamentos do mercado financeiro e comece a investir com segurança e conhecimento.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Renda Extra</h3>
+      <p>Conheça oportunidades reais para aumentar sua renda e diversificar suas fontes de ganhos.</p>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Receba Dicas Financeiras Exclusivas</h2>
+    <p>Inscreva-se para receber conteúdo premium e atualizações semanais.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Seu melhor e-mail">
+      <button type="submit">Inscrever-se</button>
+    </form>
+  </section>
+
+  <script>
+    // Função para alternar a visibilidade do menu e o ícone do hambúrguer
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger');
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open'); // Adiciona a classe open para transformar o hambúrguer em X
+    }
+
+    // Animação suave do scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
